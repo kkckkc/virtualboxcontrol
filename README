@@ -1,0 +1,10 @@
+This is all highly inspired by http://www.pjlnash.co.uk/blog/?p=39 but
+with some enhancements
+
+To run: 
+
+ 1. Update etc/settings.conf
+ 2. Start the launchdaemon.bat in your Windows XP VirtualBox
+ 3. You can now run linux-host/start.sh "notepad.exe" to start notepad in your virtualbox
+ 4. If you have shared folders set up you can also run
+    linux-host/open.sh "<path to file>"
