@@ -1,9 +1,9 @@
 virtualBoxStart() {
 	STATE="unknown"
 	while [ $STATE != "running" ]; do
-	    STATE=`VBoxManage showvminfo "$VIRTUALBOX_VM_NAME" \
+	    STATE=$( VBoxManage showvminfo "$VIRTUALBOX_VM_NAME" \
 			| grep State \
-			| awk '{print $2}'`
+			| awk '{print $2}' )
 
 		echo "State is $STATE"
 
@@ -23,10 +23,10 @@ virtualBoxStart() {
 		fi
 	done
 
-	winid=`wmctrl -l -x -i \
+	winid=$( wmctrl -l -x -i \
 		| grep "$VIRTUALBOX_VM_NAME" \
 		| grep "[Running"] \
-		| awk '{print $1}'`
+		| awk '{print $1}' )
 	wmctrl -i -a "$winid"
 	
 	tail=$1
